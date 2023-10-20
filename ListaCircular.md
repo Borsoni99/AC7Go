@@ -14,7 +14,7 @@ func ExibirListaCircular(Lista)
     faça
         Escrever(NóAtual.Valor)
         NóAtual = NóAtual.Próximo
-    enquanto NóAtual == Lista.NóInicial
+    enquanto NóAtual != Lista.NóInicial
 Fim Procedimento
 ```
 
