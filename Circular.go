@@ -5,7 +5,7 @@ import "fmt"
 
 type No struct {
 	Value int
-	Next  *No
+	Proximo  *No
 }
 
 type listaCircular struct {
@@ -21,7 +21,7 @@ func (lista *listaCircular) Exibir() {
 	atual := lista.Cabeca
 	for {
 		fmt.Printf("%d -> ", atual.Value)
-		atual = atual.Next
+		atual = atual.Proximo
 		if atual == lista.Cabeca {
 			break
 		}
@@ -33,15 +33,15 @@ func (lista *listaCircular) InserirNoInicio(value int) {
 	novoNo := &No{Value: value}
 
 	if lista.Cabeca == nil {
-		novoNo.Next = novoNo
+		novoNo.Proximo = novoNo
 		lista.Cabeca = novoNo
 	} else {
-		novoNo.Next = lista.Cabeca
+		novoNo.Proximo = lista.Cabeca
 		atual := lista.Cabeca
-		for atual.Next != lista.Cabeca {
-			atual = atual.Next
+		for atual.Proximo != lista.Cabeca {
+			atual = atual.Proximo
 		}
-		atual.Next = novoNo
+		atual.Proximo = novoNo
 		lista.Cabeca = novoNo
 	}
 }
@@ -52,15 +52,15 @@ func (lista *listaCircular) RemoverPrimeiro() {
 		return
 	}
 
-	if lista.Cabeca.Next == lista.Cabeca {
+	if lista.Cabeca.Proximo == lista.Cabeca {
 		lista.Cabeca = nil
 	} else {
 		atual := lista.Cabeca
-		for atual.Next != lista.Cabeca {
-			atual = atual.Next
+		for atual.Proximo != lista.Cabeca {
+			atual = atual.Proximo
 		}
-		atual.Next = lista.Cabeca.Next
-		lista.Cabeca = lista.Cabeca.Next
+		atual.Proximo = lista.Cabeca.Proximo
+		lista.Cabeca = lista.Cabeca.Proximo
 	}
 }
 
