@@ -1,29 +1,54 @@
-Exibição dos nós em uma lista circular:
+# Lista Circular
+
+Uma lista circular é uma estrutura de dados na qual cada nó tem um ponteiro para o próximo nó, e o último nó aponta de volta para o primeiro nó, formando um ciclo.
+
+## Exibição dos Nós em uma Lista Circular
+
 ```
-def exibir(){
-  no_atual = primeiro_no
-  faca
-      exibir no_atual.valor
-      no_atual = no_atual.proximo
-  enquanto no_atual ≠ primeiro_no
-}
+func ExibirListaCircular(Lista)
+    Se Lista está vazia
+        Retorne
+    Fim Se
+    
+    NóAtual := Lista.NóInicial
+    faça
+        Escrever(NóAtual.Valor)
+        NóAtual = NóAtual.Próximo
+    enquanto NóAtual != Lista.NóInicial
+Fim Procedimento
 ```
-Inserção de um nó no início da lista:
+
+## Inserção de um Nó no Início da Lista
+
 ```
-def inserir(){
-  novo_no = criar_novo_no(valor)
-  novo_no.proximo = primeiro_no
-  ultimo_no = encontrar_ultimo_no()
-  ultimo_no.proximo = novo_no
-  primeiro_no = novo_no
-}
+func InserirNoInicio(Lista, Valor)
+    NovoNó := CriarNó(Valor)
+    
+    Se Lista está vazia
+        Lista.NóInicial = NovoNó
+        NovoNó.Próximo = NovoNó
+    Senão
+        NovoNó.Próximo = Lista.NóInicial
+        Lista.NóInicial = NovoNó
+    Fim Se
+Fim Procedimento
 ```
-Exclusão do primeiro nó da lista:
+
+## Exclusão do Primeiro Nó da Lista
+
 ```
-def remover(){
-  nó_a_remover = primeiro_nó
-  primeiro_nó = nó_a_remover.próximo
-  último_nó = encontrar_último_nó()
-  último_nó.próximo = primeiro_nó
-}
+func ExcluirPrimeiroNó(Lista)
+    Se Lista está vazia
+        Retorne
+    Fim Se
+    
+    Se Lista possui apenas um nó
+        LiberarMemória(Lista.NóInicial)
+        Lista.NóInicial = Nulo
+    Senão
+        NóParaExcluir := Lista.NóInicial
+        Lista.NóInicial = NóParaExcluir.Próximo
+        LiberarMemória(NóParaExcluir)
+    Fim Se
+Fim Procedimento
 ```
