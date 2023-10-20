@@ -11,10 +11,10 @@ func ExibirListaCircular(Lista)
     Fim Se
     
     NóAtual := Lista.NóInicial
-    Repita
+    para
         Escrever(NóAtual.Valor)
         NóAtual = NóAtual.Próximo
-    Até que NóAtual seja igual a Lista.NóInicial
+    enquanto NóAtual == Lista.NóInicial
 Fim Procedimento
 ```
 
