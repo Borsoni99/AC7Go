@@ -21,41 +21,41 @@ InicializarListaDuplamenteEncadeada():
 ```
 ```
 InserirNo(valor):
-    NovoNo <- Criar um novo nó com o valor
-    NoAtual <- Nó Inicial
+    NovoNo = Criar um novo nó com o valor
+    NoAtual = Nó Inicial
     
-    Enquanto NoAtual->Prox não for nulo e NoAtual->Prox->Valor < valor:
-        NoAtual <- NoAtual->Prox
+    Enquanto NoAtual.Prox não for nulo e NoAtual.Prox.Valor < valor:
+        NoAtual = NoAtual.Prox
     
-    NovoNo->Anterior <- NoAtual
-    NovoNo->Prox <- NoAtual->Prox
-    NoAtual->Prox <- NovoNo
-    NovoNo->Prox->Anterior <- NovoNo
+    NovoNo.Anterior = NoAtual
+    NovoNo.Prox = NoAtual.Prox
+    NoAtual.Prox = NovoNo
+    NovoNo.Prox.Anterior = NovoNo
 ```
 ```
 BuscarNo(valor):
-    NoAtual <- Nó Sentinela Inicial->Prox
+    NoAtual = Nó Sentinela Inicial.Prox
     
     Enquanto NoAtual não for nulo:
-        Se NoAtual->Valor igual a valor:
+        Se NoAtual.Valor igual a valor:
             Retornar NoAtual
-        NoAtual <- NoAtual->Prox
+        NoAtual = NoAtual.Prox
     
     Retornar Nulo  # O nó com o valor não foi encontrado
 ```
 ```
 RemoverNo(valor):
-    NoParaRemover <- BuscarNodo(valor)
+    NoParaRemover = BuscarNodo(valor)
     
     Se NoParaRemover não for nulo:
-        NoParaRemover->Anterior->Prox <- NoParaRemover->Prox
-        NoParaRemover->Prox->Anterior <- NoParaRemover->Anterior
+        NoParaRemover.Anterior.Prox = NoParaRemover.Prox
+        NoParaRemover.Prox.Anterior = NoParaRemover.Anterior
 ```
 ```
 ExibirNo():
-    NoAtual <- No Sentinela Inicial->Prox
+    NoAtual = No Sentinela Inicial.Prox
     
     Enquanto NoAtual não for o No Sentinela Final:
-        Exibir NoAtual->Valor
-        NoAtual <- NoAtual->Prox
+        Exibir NoAtual.Valor
+        NoAtual = NoAtual.Prox
 ```
