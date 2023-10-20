@@ -1,3 +1,3 @@
-<h6>Nomes:<h6>
+<h1>Nomes:<h1>
 Thiago Borsoni
 Guilherme Almeida
