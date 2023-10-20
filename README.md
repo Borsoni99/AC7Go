@@ -1,3 +1,3 @@
 <h1>Nomes:<h1>
-Thiago Borsoni\n
+Thiago Borsoni \n
 Guilherme Almeida
